@@ -4,23 +4,16 @@ import { CoursesService } from './couses.service';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'courses',
-    template: `<h1>
-    {{title}}</h1>
-    <ul>
-    <li *ngFor="let course of courses">
-    {{course}}
-    </li>
-    </ul>
+    template: `
+    <h1>{{title}}</h1>
+    <img src={{imageUrl}}/>
+    <img [src]="imageUrl"/>
     `
 
 })
 
 export class CoursesComponent {
     title = 'List Of Course';
-    courses;
+    imageUrl = 'http://bookmarkurl.info/images/place/place-1.jpg';
 
-    constructor(service: CoursesService) {
-        // const service = new CoursesService(); // tight coupling
-        this.courses = service.getCourses();
-    }
 }
