@@ -5,11 +5,13 @@ import { CoursesService } from './couses.service';
     // tslint:disable-next-line:component-selector
     selector: 'courses',
     template: `
-  <button [style.backgroundColor]="isActive ? 'blue' : 'white'" >Save</button>
+  <button (click)="onSave()">Save</button>
     `
 
 })
 
 export class CoursesComponent {
-    isActive = true;
+    onSave() {
+        console.log('saved');
+    }
 }
