@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CoursesService } from './couses.service';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -16,5 +17,10 @@ import { Component } from '@angular/core';
 
 export class CoursesComponent {
     title = 'List Of Course';
-    courses = ['english', 'urdu', 'maths'];
+    courses;
+
+    constructor(service: CoursesService) {
+        // const service = new CoursesService(); // tight coupling
+        this.courses = service.getCourses();
+    }
 }
