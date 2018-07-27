@@ -5,13 +5,20 @@ import { CoursesService } from './couses.service';
     // tslint:disable-next-line:component-selector
     selector: 'courses',
     template: `
-  <button (click)="onSave()">Save</button>
+    <div (click)="onDivClick()">
+  <button (click)="onSave($event)">Save</button>
+  </div>
     `
 
 })
 
 export class CoursesComponent {
-    onSave() {
-        console.log('saved');
+    onSave($event) {
+        console.log('saved', $event);
+    }
+
+    onDivClick() {
+        console.log('div was clicked');
+
     }
 }
