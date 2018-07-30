@@ -5,20 +5,18 @@ import { CoursesService } from './couses.service';
     // tslint:disable-next-line:component-selector
     selector: 'courses',
     template: `
-    <div (click)="onDivClick()">
-  <button (click)="onSave($event)">Save</button>
-  </div>
+<!--  <input (keyup)="OnKeyUpUsingAnEventInJavaScript($event)"/> -->
+   <input (keyup.enter)="OnKeyUpUsingEventFilteringAngular()"/>
     `
 
 })
 
 export class CoursesComponent {
-    onSave($event) {
-        console.log('saved', $event);
-    }
-
-    onDivClick() {
-        console.log('div was clicked');
+    // OnKeyUpUsingAnEventInJavaScript($event) {
+    //     if ($event.keyCode === 13) { console.log('enter was pressed'); }
+    // }
+    OnKeyUpUsingEventFilteringAngular() {
+        console.log('Enter wass pressed');
 
     }
 }
