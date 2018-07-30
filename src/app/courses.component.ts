@@ -5,17 +5,21 @@ import { CoursesService } from './couses.service';
     // tslint:disable-next-line:component-selector
     selector: 'courses',
     template: `
-    <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
+    {{course.title | uppercase | lowercase}}<br/>
+    {{course.students | number }}<br/>
+    {{course.rating | number:'1.2-2'}} <br/>
+    {{course.price | currency:'$':true:'3.2-2' }} <br/>
     `
 
 })
 
 export class CoursesComponent {
-    email = 'me@example.com';
 
-    onKeyUp() {
-        console.log(this.email);
-
-    }
+    course = {
+        title: 'The Angular Couse',
+        rating: 4.975,
+        students: 30123,
+        price: 190.95,
+    };
 
 }
