@@ -5,20 +5,17 @@ import { CoursesService } from './couses.service';
     // tslint:disable-next-line:component-selector
     selector: 'courses',
     template: `
-  <!-- <input (keyup.enter)="OnKeyUpUsingJsEvent($event)"/>  <!-- to get you what you type using js event -->
-    <input #email (keyup.enter)="OnKeyUpUsingAngularTemplateVariables(email)"/>
+    <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
     `
 
 })
 
 export class CoursesComponent {
+    email = 'me@example.com';
 
-    // OnKeyUpUsingJsEvent($event) {
-    //     console.log($event.target.value);
-
-    // }
-    OnKeyUpUsingAngularTemplateVariables(email) {
-        console.log(email.value);
+    onKeyUp() {
+        console.log(this.email);
 
     }
+
 }
