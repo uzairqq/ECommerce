@@ -7,6 +7,7 @@ import { CoursesService } from './couses.service';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { ChildComponentComponent } from './child-component/child-component.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ChildComponentComponent } from './child-component/child-component.compo
     CoursesComponent,
     SummaryPipe,
     ChildComponentComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,
