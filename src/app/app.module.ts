@@ -3,17 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses.component';
-import { CourseComponent } from './course/course.component';
 import { CoursesService } from './couses.service';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
+import { ChildComponentComponent } from './child-component/child-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
-    CourseComponent,
-    SummaryPipe
+    SummaryPipe,
+    ChildComponentComponent,
   ],
   imports: [
     BrowserModule,
