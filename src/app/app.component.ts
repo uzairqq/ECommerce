@@ -7,11 +7,15 @@ import { Component } from '@angular/core';
   <h1>Hello World</h1>
   <h2>Parent App Component</h2>
   <p>Value from child Component is </p>
-  <app-child [messageFromParent]="message"></app-child>
+  Message: {{message}}
+  <app-child (messageEvent)="receiveMessage($event)" ></app-child>
+ 
   `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  message = 'Hello Uzair I am From Parent ';
-
+  message = 'hello world parent here';
+  receiveMessage($event) {
+    this.message = $event;
+  }
 }
