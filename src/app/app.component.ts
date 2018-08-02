@@ -4,10 +4,7 @@ import { Component, ViewChild } from '@angular/core';
   selector: 'app-root',
   // templateUrl: './app.component.html',
   template: `
-  <app-bootstrap-panel>
-  <div class="Heading">Heading</div>
-  <div class="Body">Body</div>
-  </app-bootstrap-panel>
+  <app-bootstrap-panel>hello</app-bootstrap-panel>
   `,
   styleUrls: ['./app.component.css']
 })
