@@ -6,16 +6,14 @@ import { CoursesComponent } from './courses.component';
 import { CoursesService } from './couses.service';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
-import { ChildComponentComponent } from './child-component/child-component.component';
-import { ChildComponent } from './child/child.component';
+import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
     SummaryPipe,
-    ChildComponentComponent,
-    ChildComponent,
+    BootstrapPanelComponent,
   ],
   imports: [
     BrowserModule,
