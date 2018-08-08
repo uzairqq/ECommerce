@@ -4,18 +4,18 @@ import { Component, ViewChild } from '@angular/core';
   selector: 'app-root',
   // templateUrl: './app.component.html',
   template: `
-  <div *ngIf="courses.length>0">
+  <div *ngIf="courses.length>0;  else noCourses" >
   List Of Courses
   </div>
-  <div *ngIf="courses.length==0">
+  <ng-template #noCourses>
   No Courses Yet
-  </div>
+  </ng-template>
   `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
-  courses = [1, 2];
+  courses = [];
 
 
 
