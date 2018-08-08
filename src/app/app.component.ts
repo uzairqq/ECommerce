@@ -4,34 +4,25 @@ import { Component, ViewChild } from '@angular/core';
   selector: 'app-root',
   // templateUrl: './app.component.html',
   template: `
-  <button (click)="onAdd()">Add</button>
-<ul>
-<li *ngFor="let course of courses;index as i">
-{{i}}--{{course.name}}
-<button (click)="onChange(course)">Change</button>
-<button (click)="onRemove(course)">Remove</button>
-</li>
-</ul>
+  <button
+  [style.backgroundColor]="canSave ? 'blue' : 'gray' "
+  [style.color]="canSave ? 'white' :'black'"
+  [style.fontWeight]="canSave ? 'bold' : 'normal'"
+  >Save with Default approach</button>
+
+<button [ngStyle]="{
+  'backgroundColor':canSave ? 'blue' : 'gray',
+  'color':canSave ? 'white' :'black',
+  'fontWeight':canSave ? 'bold' : 'normal'
+
+}" >Save With ngStyle Approach</button>
   `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
-  courses = [
-    { id: 1, name: 'course1' },
-    { id: 2, name: 'course2' },
-    { id: 3, name: 'course3' },
-  ];
-  onAdd() {
-    this.courses.push({ id: 4, name: 'course4' });
-  }
-  onRemove(course) {
-    const index = this.courses.indexOf(course);
-    this.courses.splice(index, 1);
-  }
-  onChange(course) {
-    course.name = 'Updated';
-  }
+  canSave = true;
+
 
 
 
