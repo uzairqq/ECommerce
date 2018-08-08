@@ -4,9 +4,10 @@ import { Component, ViewChild } from '@angular/core';
   selector: 'app-root',
   // templateUrl: './app.component.html',
   template: `
-  <div *ngIf="courses.length>0;  else noCourses" >
+  <div *ngIf="courses.length>0; then courseList else noCourses"></div>
+  <ng-template #courseList>
   List Of Courses
-  </div>
+  </ng-template>
   <ng-template #noCourses>
   No Courses Yet
   </ng-template>
@@ -15,7 +16,7 @@ import { Component, ViewChild } from '@angular/core';
 })
 export class AppComponent {
 
-  courses = [];
+  courses = [1, 2];
 
 
 
