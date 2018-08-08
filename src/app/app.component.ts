@@ -4,21 +4,10 @@ import { Component, ViewChild } from '@angular/core';
   selector: 'app-root',
   // templateUrl: './app.component.html',
   template: `
-  <span>{{task.assigned?.name}}</span>
+ <input type="text" appInputFormat>
   `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  task = {
-    title: 'Review Application',
-    assigned: {
-      name: null
-    }
-  };
-
-
-
-
 
 }

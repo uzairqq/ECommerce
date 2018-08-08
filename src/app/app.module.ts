@@ -7,6 +7,7 @@ import { CoursesService } from './couses.service';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
+import { InputFormatDirective } from './input-format.directive';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.compo
     CoursesComponent,
     SummaryPipe,
     BootstrapPanelComponent,
+    InputFormatDirective,
   ],
   imports: [
     BrowserModule,
