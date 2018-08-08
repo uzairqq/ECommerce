@@ -4,7 +4,7 @@ import { Component, ViewChild } from '@angular/core';
   selector: 'app-root',
   // templateUrl: './app.component.html',
   template: `
- <input type="text" appInputFormat [format]="'uppercase'">
+ <input type="text" [appInputFormat]="'uppercase'">
   `,
   styleUrls: ['./app.component.css']
 })
