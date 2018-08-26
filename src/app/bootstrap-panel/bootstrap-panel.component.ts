@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class BootstrapPanelComponent {
 
+  log(x) {
+    console.log(x);
+  }
 }
