@@ -10,4 +10,8 @@ export class BootstrapPanelComponent {
   log(x) {
     console.log(x);
   }
+
+  takeForm(x) {
+    console.log(x);
+  }
 }
