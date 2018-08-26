@@ -19,5 +19,11 @@
       cols="30"></textarea>
     <div class="alert alert-danger" *ngIf="comment.touched && !comment.valid">Comment Feild is Required</div>
   </div>
+  <div class="checkbox">
+    <label for="">
+      <input type="checkbox" ngModel name="isSubscribed">Is Subscribed to News Letter
+    </label>
+  </div>
+  <p>{{foo.value | json }}</p>
   <button class="btn btn-primary" [disabled]="!foo.valid">Submit</button>
 </form>
