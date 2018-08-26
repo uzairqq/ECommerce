@@ -1,20 +1,23 @@
 <form #foo="ngForm" (ngSubmit)="takeForm(foo)">
-  <div class="form-group">
-    <label for="firstName">First Name</label>
-    <input required minlength="4" maxlength="10" pattern="cake" ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)"
-      id="firstName" type="text" class="form-control">
-    <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
-      <div *ngIf="firstName.errors.required">First Name is required</div>
-      <div *ngIf="firstName.errors.minlength">First Name Should be Minimum {{firstName.errors.minlength.requiredLength}} characters</div>
-      <div *ngIf="firstName.errors.pattern">First Name does not match the pattern</div>
-      <div *ngIf="firstName.errors.maxlength">First Name Should be Maximum 10 characters</div>
+  <div ngModelGroup="contact">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input required minlength="4" maxlength="10" pattern="cake" ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)"
+        id="firstName" type="text" class="form-control">
+      <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+        <div *ngIf="firstName.errors.required">First Name is required</div>
+        <div *ngIf="firstName.errors.minlength">First Name Should be Minimum {{firstName.errors.minlength.requiredLength}} characters</div>
+        <div *ngIf="firstName.errors.pattern">First Name does not match the pattern</div>
+        <div *ngIf="firstName.errors.maxlength">First Name Should be Maximum 10 characters</div>
+      </div>
     </div>
   </div>
+
   <div class="form-group">
     <label for="comment">Comment</label>
     <textarea required ngModel name="comment" #comment="ngModel" (change)="log(comment)" id="comment" class="form-control" rows="10"
       cols="30"></textarea>
     <div class="alert alert-danger" *ngIf="comment.touched && !comment.valid">Comment Feild is Required</div>
   </div>
-  <button class="btn btn-primary">Submit</button>
+  <button class="btn btn-primary" [disabled]="!foo.valid">Submit</button>
 </form>
