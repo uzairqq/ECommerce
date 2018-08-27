@@ -24,15 +24,10 @@
       <input type="checkbox" ngModel name="isSubscribed">Is Subscribed to News Letter
     </label>
   </div>
-  <div class="form-group">
-    <label for="contactMethod">Contact Method</label>
-    <select ngModel name="contactMethod" class="form-control">
-      <option value=""></option>
-      <option *ngFor="let method of contactMethod" [value]="method.id">
-        {{method.name}}
-      </option>
-
-    </select>
+  <div *ngFor="let method of contactMethod" class="radio">
+    <label>
+      <input type="radio" ngModel name="contactMethod" [value]="method.id"> {{method.name}}
+    </label>
   </div>
   <p>{{foo.value | json }}</p>
   <button class="btn btn-primary" [disabled]="!foo.valid">Submit</button>
