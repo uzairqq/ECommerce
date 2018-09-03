@@ -9,6 +9,7 @@ import { SummaryPipe } from './summary.pipe';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 import { InputFormatDirective } from './input-format.directive';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { NewcourseformComponent } from './newcourseform/newcourseform.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     BootstrapPanelComponent,
     InputFormatDirective,
     SignupFormComponent,
+    NewcourseformComponent,
   ],
   imports: [
     BrowserModule,
