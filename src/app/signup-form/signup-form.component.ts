@@ -10,29 +10,32 @@ import { UsernameValidators } from './username.validators';
 export class SignupFormComponent {
 
   form = new FormGroup({
-    username: new FormControl('',
-      [
-        Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(12),
-        UsernameValidators.cannotContainSpace
-      ], UsernameValidators.shouldBeUnique), // third argument should be for asyncronous validators
-    password: new FormControl('',
-      [
-        Validators.required,
-        Validators.minLength(10),
-        Validators.maxLength(20),
-        UsernameValidators.cannotContainSpace
-      ]
-    )
+    account: new FormGroup({
+      username: new FormControl('',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(12),
+          UsernameValidators.cannotContainSpace
+        ], UsernameValidators.shouldBeUnique), // third argument should be for asyncronous validators
+      password: new FormControl('',
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(20),
+          UsernameValidators.cannotContainSpace
+        ]
+      )
+    })
+
   });
 
   get username() {
-    return this.form.get('username');
+    return this.form.get('account.username');
   }
 
   get password() {
-    return this.form.get('password');
+    return this.form.get('account.password');
   }
 
   login() {
