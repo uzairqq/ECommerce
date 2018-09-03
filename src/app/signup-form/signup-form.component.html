@@ -6,6 +6,7 @@
       <div *ngIf="username.errors.required">UserName Is Required</div>
       <div *ngIf="username.errors.minlength">UserName Should be minimum {{username.errors.minlength.requiredLength}} character</div>
       <div *ngIf="username.errors.maxlength">UserName Should be Maximum {{username.errors.maxlength.requiredLength}} character</div>
+      <div *ngIf="username.errors.cannotContainSpace">UserName Cannot Contain Space</div>
 
     </div>
   </div>
@@ -16,6 +17,8 @@
       <div *ngIf="password.errors.required">Password Is Required</div>
       <div *ngIf="password.errors.minlength">Password Should be Minimum {{password.errors.minlength.requiredLength}} characters</div>
       <div *ngIf="password.errors.maxlength">Password Should be Maximum {{password.errors.maxlength.requiredLength}} character</div>
+      <div *ngIf="password.errors.cannotContainSpace">Password Cannot Contain Space</div>
+
     </div>
   </div>
   <button class="btn btn-primary" type="submit">Sign Up</button>
