@@ -9,18 +9,8 @@ import { formControlBinding } from '@angular/forms/src/directives/ng_model';
 })
 export class NewcourseformComponent {
 
-  form = new FormGroup({
-    name: new FormControl('', Validators.required),
-    contact: new FormGroup({
-      email: new FormControl(),
-      phone: new FormControl()
-    }),
-    topics: new FormArray([])
-  });
+  form;
 
-  /**
-   *
-   */
   constructor(fb: FormBuilder) {
     fb.group({
       name: ['', Validators.required],
