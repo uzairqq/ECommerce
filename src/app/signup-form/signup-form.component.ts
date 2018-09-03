@@ -35,4 +35,10 @@ export class SignupFormComponent {
     return this.form.get('password');
   }
 
+  login() {
+    this.form.setErrors({
+      invalidLogin: true
+    });
+  }
+
 }
