@@ -16,7 +16,7 @@ export class SignupFormComponent {
         Validators.minLength(3),
         Validators.maxLength(12),
         UsernameValidators.cannotContainSpace
-      ]),
+      ], UsernameValidators.shouldBeUnique), // third argument should be for asyncronous validators
     password: new FormControl('',
       [
         Validators.required,

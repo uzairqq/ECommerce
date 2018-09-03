@@ -1,4 +1,5 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
+import { promise } from 'protractor';
 
 export class UsernameValidators {
     static cannotContainSpace(control: AbstractControl): ValidationErrors | null {
@@ -10,15 +11,18 @@ export class UsernameValidators {
         }
     }
 
-    static shouldBeUnique(control: AbstractControl): ValidationErrors | null {
-        setTimeout(() => {
-            console.log('ok');
-            if (control.value === 'uzair') {
-                return { shouldBeUnique: true };
+    static shouldBeUnique(control: AbstractControl): Promise<ValidationErrors | null> {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('ok');
+                if (control.value === 'uzair') {
+                    resolve({ shouldBeUnique: true });
+                } else {
+                    resolve(null);
+                }
 
-                return null;
-            }
-        }, 2000);
-        return null;
+            }, 2000);
+        });
+
     }
 }
