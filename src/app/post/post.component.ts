@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { initDomAdapter } from '@angular/platform-browser/src/browser';
 
 @Component({
   selector: 'app-post',
@@ -18,11 +19,14 @@ export class PostComponent {
   }
 
   createPost(input: HTMLInputElement) {
-    const post = { title: input.value };
+    const post: any = { title: input.value };
+    input.value = '';
+
     this.http.post(this.url, JSON.stringify(post))
       .subscribe(response => {
+        post.id = response.json().id;
+        this.posts.splice(0, 0, post);
         console.log(response.json());
-
       });
   }
 }
