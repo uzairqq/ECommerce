@@ -10,6 +10,8 @@ import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.compo
 import { InputFormatDirective } from './input-format.directive';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewcourseformComponent } from './newcourseform/newcourseform.component';
+import { PostComponent } from './post/post.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { NewcourseformComponent } from './newcourseform/newcourseform.component'
     InputFormatDirective,
     SignupFormComponent,
     NewcourseformComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
     CoursesService
