@@ -6,7 +6,7 @@ import { Http } from '@angular/http';
 })
 export class PostService {
 
-  private url = 'https://jsonplaceholder.typicode.com/posts';
+  private url = 'https://abcdjsonplaceholder.typicode.com/posts';
 
   constructor(private http: Http) { }
 
