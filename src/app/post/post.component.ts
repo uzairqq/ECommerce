@@ -29,6 +29,13 @@ export class PostComponent {
         console.log(response.json());
       });
   }
+
+  updatePost(post) {
+    this.http.put(this.url + '/' + post.id, JSON.stringify(post)).subscribe(response => {
+      console.log(response.json());
+
+    });
+  }
 }
 
 
